@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components'
+
+const Container = styled.div`
+  display: flex;
+  justify-content:center;
+  height: 100%;
+  align-items:center;
+  background-color:#EEEDDE;
+  `
+const Form =  styled.div`
+  background-color:#141E27;
+  padding: 25px 30px;
+  border-radius: 25px;
+  width: 700px;
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Container>
+        <Form>
+          Calculadora
+        </Form>
+      </Container>
   );
 }
 
