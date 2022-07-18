@@ -27,12 +27,12 @@ const ErrorMessage = styled.div`
 color:#890F0D
 `
 
-const Input =({label,...props}) =>{
+const Input =({label,placeholder,...props}) =>{
     const [field,meta] = useField(props)
     return(
         <Control>
             <Label>{label}</Label>
-            <TextInput {...field} {...props}/>
+            <TextInput placeholder={placeholder} {...field} {...props}/>
             {meta.touched && meta.erro ?(
                 <ErrorMessage>{meta.error}</ErrorMessage>
             ): null}
