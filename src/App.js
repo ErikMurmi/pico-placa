@@ -1,25 +1,28 @@
-import styled from 'styled-components'
-
-const Container = styled.div`
-  display: flex;
-  justify-content:center;
-  height: 100%;
-  align-items:center;
-  background-color:#EEEDDE;
-  `
-const Form =  styled.div`
-  background-color:#141E27;
-  padding: 25px 30px;
-  border-radius: 25px;
-  width: 700px;
-`
+import {Formik,Form} from 'formik'
+import Input from './components/Input'
+import {Container,FormContainer} from './components/Containers'
+import Button from './components/Button'
 
 function App() {
+
+  const handleSubmit=()=>{}
+
   return (
       <Container>
-        <Form>
-          Calculadora
-        </Form>
+        <FormContainer>
+          <h1 style={{color:"white"}}>Pico y placa predictor</h1>
+          <Formik
+          initialValues={{plate:'',date:'',time:''}}
+          onSubmit ={handleSubmit}
+          >
+            <Form>
+              <Input name="Plate" label='License plate'></Input>
+              <Input name="Date" label='Day you are looking for'></Input>
+              <Input name="Time" label='What hour?'></Input>
+              <Button>Find out</Button>
+            </Form>
+          </Formik>
+        </FormContainer>
       </Container>
   );
 }
