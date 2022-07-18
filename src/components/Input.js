@@ -24,7 +24,9 @@ const TextInput = styled.input`
 `
 
 const ErrorMessage = styled.div`
-color:#890F0D
+color:#FF8C32;
+font-weight:bold;
+font-size:1.5em;
 `
 
 const Input =({label,placeholder,...props}) =>{
@@ -33,7 +35,7 @@ const Input =({label,placeholder,...props}) =>{
         <Control>
             <Label>{label}</Label>
             <TextInput placeholder={placeholder} {...field} {...props}/>
-            {meta.touched && meta.erro ?(
+            {meta.touched && meta.error?(
                 <ErrorMessage>{meta.error}</ErrorMessage>
             ): null}
         </Control>
