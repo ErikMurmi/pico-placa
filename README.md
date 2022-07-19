@@ -1,11 +1,12 @@
-# Getting Started with Create React App
+# 🚗 Pico y Placa Predictor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+
+## Execute
+First you have to install all dependencies, you have to be located in the project directory:
+### `npm install`
 
 In the project directory, you can run:
-
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -18,53 +19,23 @@ You may also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Starting to predict
 
-### `npm run build`
+### How it's works?
+The app predict whether you can or can't be on road at specific time of a day.
+For that you have to fill all the inputs with the required info:
+- **License plate**: Your car license (e.g.PBI-0000) 
+- **Date**: Date you are looking for with format yyyy/mm/dd
+- **Time**: Time you expect to drive with format hh:mm
+<img width="457" alt="image" src="https://user-images.githubusercontent.com/62625853/179664344-04d6eb24-14e8-444a-92a4-0ad93a381b38.png">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## About the rule
+The "Pico y Placa" rule applies to Quito, like so:
+![image](https://user-images.githubusercontent.com/62625853/179664684-aa76ab69-408b-4edb-80e3-96a61a5af535.png)
+It has an schedul from  7:00am - 9:30am / 16:00pm - 19:30, and it depends on your license plate last digit:
+- **Monday**: 1,2
+- **Tuesday**: 3,4
+- **Wednesday**: 5,6
+- **Thursday**: 7,8
+- **Friday**: 9,0
+- **Saturday,Sunday**: There is no restriction
