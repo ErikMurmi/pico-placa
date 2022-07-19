@@ -31,7 +31,9 @@ For that you have to fill all the inputs with the required info:
 
 ## About the rule
 The "Pico y Placa" rule applies to Quito, like so:
-![image](https://user-images.githubusercontent.com/62625853/179664684-aa76ab69-408b-4edb-80e3-96a61a5af535.png)
+<br>
+<img width="457" alt="image" src="https://user-images.githubusercontent.com/62625853/179664684-aa76ab69-408b-4edb-80e3-96a61a5af535.png">
+<br>
 It has an schedul from  7:00am - 9:30am / 16:00pm - 19:30, and it depends on your license plate last digit:
 - **Monday**: 1,2
 - **Tuesday**: 3,4
