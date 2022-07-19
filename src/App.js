@@ -23,21 +23,24 @@ function App() {
           validationSchema={Yup.object({
             plate: Yup.string()
             .matches(/[aA-zZ][aA-zZ][aA-zZ]-[0-9][0-9][0-9][0-9]/,'Invalid plate, format must be like: PBO-1111')
-            .test('len', 'Must be exactly xxx-xxxx', val => val.length === 8)
+            .test('len', 'Must be exactly xxx-xxxx', val => !val || val.length === 8)
             .required('A license plate is required'),
             date: Yup.date('Date format must be YYYY/MM/DD')
             .required('A date is required to predict the status')
             .typeError('Invalid date, format must be like 1990/09/09'),
             time: Yup.string()
             .matches(/[0-9][0-9]:[0-9][0-9]/,'Not a valid hour, format must be HH:MM')
-            .test('len', 'Must be exactly xx:xx', val => val.length === 5)
+            .test('len', 'Must be exactly xx:xx', val => !val || val.length === 5)
             .required('An hour is required to predict the status')
           })}
           >
             <Form>
-              <Input name="plate" label='Type your license plate' placeholder='XXX-XXXX'></Input>
-              <Input name="date" label='What day are you looking for?' placeholder='YYYY/MM/DD'></Input>
-              <Input name="time" label='What hour? (24h Format)' placeholder='00:00'></Input>
+              <Input name="plate" label='Type your license plate'
+               placeholder='XXX-XXXX' defaultValue='AAAA-1111'></Input>
+              <Input name="date" label='What day are you looking for?'
+               placeholder='YYYY/MM/DD' defaultValue="1990/09/09"></Input>
+              <Input name="time" label='What hour? (24h Format)' 
+              placeholder='00:00' defaultValue="12:00"></Input>
               <Button type='submit'>Find out</Button>
             </Form>
           </Formik>

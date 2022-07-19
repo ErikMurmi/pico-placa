@@ -29,12 +29,12 @@ font-weight:bold;
 font-size:1.5em;
 `
 
-const Input =({label,placeholder,...props}) =>{
+const Input =({label,defaultValue,placeholder,...props}) =>{
     const [field,meta] = useField(props)
     return(
         <Control>
             <Label>{label}</Label>
-            <TextInput placeholder={placeholder} {...field} {...props}/>
+            <TextInput placeholder={placeholder} defaultValue={defaultValue} {...field} {...props}/>
             {meta.touched && meta.error?(
                 <ErrorMessage>{meta.error}</ErrorMessage>
             ): null}
